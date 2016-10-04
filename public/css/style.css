@@ -1,0 +1,389 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: #808080;
+  font-size: 20px;
+  font-family: Proxima Nova;
+  font-weight: lighter;
+}
+#root {
+  position: relative;
+  background: #000;
+}
+#canvas {
+  position: absolute;
+  z-index: 1;
+}
+ul {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  color: #555;
+  font-weight: lighter;
+}
+p {
+  color: #808080;
+  padding: 1em 0;
+  line-height: 137%;
+}
+.background_image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  background-position: 50% 0%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.button {
+  display: inline-block;
+  color: inherit;
+  padding: 1em 2em;
+  border: 0.25em solid;
+  text-align: center;
+}
+.button span .fa {
+  margin-left: 2em;
+}
+.card {
+  background: rgba(255,255,255,0.9);
+  width: 35%;
+  min-width: 500px;
+  margin-left: 25vw;
+}
+.card .card_contents {
+  padding: 3em;
+  color: #808080;
+}
+section[role="related"] {
+  height: calc(100vh + 3em);
+}
+section[role="related"] .layout {
+  padding: 0;
+}
+section[role="related"] .layout ul.contents {
+  overflow: hidden;
+  margin: 0;
+  white-space: nowrap;
+}
+section[role="related"] .layout .card_related {
+  margin-right: 2em;
+  display: inline-block;
+  width: 32vw;
+  min-width: 250px;
+  white-space: nowrap;
+}
+section[role="related"] .layout .card_related .card_contents .image {
+  background: #ccc;
+  width: 100%;
+  height: 32vw;
+  min-height: 250px;
+  background-position: 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+section[role="related"] .layout .card_related .card_contents .block {
+  background-color: #fff;
+  padding: 1em 2em;
+  color: #808080;
+}
+section[role="related"] .layout .card_related .card_contents .block h5 {
+  margin-bottom: 0;
+}
+section[role="related"] .layout .card_related .card_contents .block li {
+  display: inline-block;
+}
+section[role="related"] .layout .card_related .card_contents .block li.detail {
+  width: 90%;
+  white-space: normal;
+}
+section[role="related"] .layout .card_related .card_contents .block li.type {
+  margin-top: -0.5em;
+  font-size: 2em;
+  text-align: left;
+  width: 10%;
+  vertical-align: top;
+}
+section[role="related"] .footer {
+  border-top: 1px solid rgba(0,0,0,0.1);
+  text-align: center;
+  width: 100%;
+  padding: 1em;
+}
+section {
+  height: 100vh;
+  width: 100%;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  position: relative;
+  overflow: hidden;
+  background-position: 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+section .layout {
+  padding: 1em;
+  height: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+section:nth-child(even) {
+  background-color: #efefef;
+}
+section:nth-child(odd) {
+  background-color: #f8f8ff;
+}
+.block--white h1,
+.block--white h2,
+.block--white h3,
+.block--white h4,
+.block--white p {
+  color: #fff;
+  margin-top: 0;
+}
+.block--white h1 {
+  margin-bottom: 0;
+  padding-bottom: 0.35em;
+  border-bottom: 3px solid #fff;
+}
+.block--white h3 {
+  margin-top: 0.5em;
+}
+.block--feature {
+  position: relative;
+}
+.block--feature:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  border-top: 1px solid rgba(0,0,0,0.25);
+  top: 0.5em;
+  left: 0;
+  z-index: -1;
+}
+.block--sticky-padding {
+  height: 1em;
+}
+section[role="violet"] {
+  background: #bdbce2;
+  height: 50vh;
+  min-height: 550px;
+}
+section[role="violet"] .layout .contents {
+  width: 100%;
+  max-width: 600px;
+  padding: 1em;
+}
+section[role="split"] {
+  background-color: #bdbce2;
+  height: 50vh;
+}
+section[role="split"] .layout {
+  display: block;
+  padding: 0;
+}
+section[role="split"] .layout .contents {
+  color: #fff;
+}
+section[role="split"] .layout .contents .view {
+  width: 50%;
+  font-size: 0;
+  display: inline-block;
+  vertical-align: top;
+}
+section[role="split"] .layout .contents .view .image {
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  width: 100%;
+  height: 50vh;
+  min-height: 250px;
+  background-position: 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+section[role="split"] .layout .contents .view .block {
+  padding: 3em;
+  font-size: 1rem;
+}
+section[role="split"] .layout .contents .view .block h1,
+section[role="split"] .layout .contents .view .block p {
+  color: #fff;
+}
+section[role="split"] .layout .contents .view .block h1 {
+  margin: 0;
+  font-size: 1.5em;
+}
+section[role="frame"] {
+  height: auto;
+  min-height: none;
+}
+section[role="frame"] .layout {
+  padding: 20vh 0;
+}
+section[role="frame"] .layout .contents {
+  width: 60%;
+}
+section[role="frame"] .layout .contents .block {
+  color: #6290ff;
+  position: relative;
+  text-align: left;
+  background-color: #f8f8ff;
+  padding: 0.5em 4em;
+  border-left: 0.025em solid;
+  border-right: 0.025em solid;
+}
+section[role="frame"] .layout .contents .block:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  top: 50%;
+  left: -50%;
+  width: 200%;
+  border-top: 0.025em solid;
+}
+section[role="frame"] .layout .contents .block span {
+  line-height: 137%;
+  font-size: 1.125em;
+}
+section[role="quote"] {
+  height: auto;
+  min-height: none;
+}
+section[role="quote"] .layout {
+  padding: 6.5vh 0;
+}
+section[role="quote"] .block--quote h1 {
+  text-align: center;
+  color: #ff2b2e;
+}
+section[role="standard"] {
+  height: 50vh;
+  min-height: 550px;
+}
+section[role="standard"] .layout .contents {
+  width: 100%;
+  max-width: 720px;
+  padding: 1em;
+}
+section[role="block"] {
+  height: auto;
+  min-height: none;
+}
+section[role="block"] .layout {
+  padding: 6.5vh 0;
+}
+section[role="block"] .layout .contents {
+  width: 100%;
+  padding: 1em;
+  text-align: center;
+}
+section[role="block"] .layout .contents.right {
+  text-align: right;
+}
+section[role="block"] .layout .contents.left {
+  text-align: left;
+}
+section[role="block"] .layout .contents.half {
+  width: 60%;
+}
+section[role="block"] .layout .contents .block--feature span {
+  padding: 0 3em;
+}
+section[role="block"]:nth-child(even) .block--feature span {
+  background: #efefef;
+}
+section[role="block"]:nth-child(odd) .block--feature span {
+  background: #fff;
+}
+section[role="block"].sticky {
+  position: absolute;
+  z-index: 1;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+}
+section[role="block"].sticky .layout {
+  background: #fff;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  transition: all 0.4s;
+  border-bottom: 1px solid rgba(255,255,255,0);
+}
+section[role="block"].sticky.fix {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+section[role="block"].sticky.fix .layout {
+  padding: 1em;
+}
+section[role="block"].sticky.fit .layout {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+section[role="content"] .layout {
+  background: #bdbce2;
+  margin: 0 auto;
+  width: 50%;
+  height: 100%;
+}
+section[role="splash"] {
+  background: #bdbce2;
+  background-position: 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+section[role="splash"] .content {
+  font-size: 2.5em;
+}

@@ -1,0 +1,305 @@
+@import 'nib'
+
+// global-reset()
+
+*, *:before, *:after
+  box-sizing border-box
+
+before()
+  &:before 
+    content ''
+    position absolute
+    top  0
+    wh(100%, 100%)
+    {block}
+
+rouge = #ff2b2e
+ghost = #f8f8ff
+paleblue = #6290ff
+salmon = #f18780
+violet = #bdbce2
+
+html, body
+  margin 0
+  padding 0
+  color grey
+  font-size 20px
+  font-family Proxima Nova
+  font-weight lighter
+
+#root
+  position relative
+  background: black
+#canvas
+  position: absolute
+  z-index: 1
+ul
+  list-style: none
+h1,h2,h3,h4,h5,p
+  color #555
+  font-weight lighter
+p
+  color grey
+  padding: 1em 0
+  line-height: 137%
+
+.background_image
+  position: absolute
+  width 100%
+  height 100%
+  z-index: -1
+  opacity: .5
+  background-position 50% 0%
+  background-size cover
+  background-repeat no-repeat
+
+.button
+  display inline-block
+  color: inherit
+  padding 1em 2em
+  border .25em solid
+  text-align: center
+  span
+    .fa
+      margin-left 2em
+.card
+  background: rgba(255,255,255,.9)
+  width 35%
+  min-width 500px
+  margin-left 25vw
+  .card_contents
+    padding 3em
+    color grey
+
+section[role="related"]
+  height calc(100vh + 3em)
+  .layout
+    padding: 0
+    ul.contents
+      overflow hidden
+      margin 0
+      white-space: no-wrap
+    .card_related
+      margin-right 2em
+      display: inline-block
+      width 32vw
+      min-width: 250px
+      white-space: no-wrap
+      .card_contents
+        .image
+          background: #ccc
+          width 100%
+          height 32vw
+          min-height: 250px
+          background-position 50% 50%
+          background-size cover
+          background-repeat no-repeat
+        .block
+          h5 
+            margin-bottom 0
+          li
+            display inline-block
+            &.detail
+              width 90%
+              white-space: normal
+            &.type
+              margin-top -.5em
+              font-size: 2em
+              text-align: left
+              width 10%
+              vertical-align: top
+          background-color white
+          padding 1em 2em
+          color grey
+  .footer
+    border-top 1px solid rgba(0,0,0,.1)
+    text-align: center
+    width 100%
+    padding 1em
+
+  
+
+section
+  height 100vh
+  width 100%
+  transform translate3d(0,0,0)
+  position relative
+  overflow hidden
+  background-position 50% 50%
+  background-size cover
+  background-repeat no-repeat
+  .layout
+    padding 1em
+    height 100%
+    display flex
+    align-items center
+    justify-content center
+  &:nth-child(even)
+    background-color #efefef
+  &:nth-child(odd)
+    background-color ghost
+
+.block
+  &--white
+    h1, h2, h3, h4, p
+      color: white
+      margin-top 0
+    h1
+      margin-bottom 0
+      padding-bottom .35em
+      border-bottom 3px solid white
+    h3 
+      margin-top .5em
+  &--feature
+    position: relative
+    +before()
+      width: 100%
+      border-top: 1px solid rgba(0,0,0,.25)
+      top .5em
+      left 0
+      z-index: -1
+  &--sticky-padding
+    height 1em
+section[role="violet"]
+  background: #bdbce2
+  height 50vh
+  min-height: 550px
+  .layout
+    .contents
+      width 100%
+      max-width: 600px
+      padding 1em
+
+section[role="split"]
+  background-color violet
+  height 50vh
+  .layout
+    display: block
+    padding: 0
+    .contents
+      color: white
+      .view        
+        width: 50%
+        font-size: 0
+        display: inline-block
+        vertical-align: top
+        .image
+          opacity: .5
+          width 100%
+          height 50vh
+          min-height: 250px
+          background-position 50% 50%
+          background-size cover
+          background-repeat no-repeat
+        .block          
+          padding: 3em
+          font-size: 1rem
+          h1, p
+            color: white
+          h1
+            margin: 0
+            font-size: 1.5em
+section[role="frame"]
+  height: auto
+  min-height: none
+  .layout
+    padding: 20vh 0
+    .contents
+      width 60%
+      .block
+        color paleblue
+        +before()
+          z-index: -1
+          top 50%
+          left -50%
+          width 200%
+          border-top .025em solid
+        position: relative
+        text-align: left
+        background-color ghost
+        padding .5em 4em
+        border-left .025em solid 
+        border-right .025em solid 
+        span 
+          line-height: 137%
+          font-size: 1.125em
+
+section[role="quote"]
+  height: auto
+  min-height: none
+  .layout
+    padding: 6.5vh 0
+  .block--quote
+    h1
+      text-align: center
+      color rouge
+
+section[role="standard"]
+  height 50vh
+  min-height: 550px
+  .layout
+    .contents
+      width 100%
+      max-width: 720px
+      padding 1em
+
+section[role="block"]
+  height: auto
+  min-height: none
+  .layout
+    padding: 6.5vh 0
+    .contents
+      width 100%
+      padding 1em
+      text-align: center
+      &.right
+        text-align: right
+      &.left
+        text-align: left
+      &.half
+        width 60%
+      .block--feature
+        span
+          padding: 0 3em
+  &:nth-child(even)
+    .block--feature
+      span
+        background #efefef
+  &:nth-child(odd)
+    .block--feature
+      span
+        background white
+  &.sticky
+    position absolute
+    z-index: 1
+    transition all .3s
+    .layout
+      background: white
+      transition all .4s
+      border-bottom 1px solid rgba(255,255,255,0)
+    &.fix
+      position: fixed
+      top: 0
+      z-index: 100
+      .layout
+        padding 1em
+    &.fit
+      .layout
+        border-bottom 1px solid rgba(0,0,0,.1)        
+
+section[role="content"]
+  .layout
+    background violet
+    margin 0 auto
+    width 50%
+    height 100%
+
+section[role="splash"]
+  background: #bdbce2
+  .content
+    font-size: 2.5em
+  background-position 50% 50%
+  background-size cover
+  background-repeat no-repeat
+
+
